@@ -1,0 +1,7 @@
+[
+  {
+    "id": 1,
+    "id_user": 1,
+    "items": [{"id":1,"amount":1}, {"id":2,"amount":5}, {"id":3,"amount":7}]
+  }
+]

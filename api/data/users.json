@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "full_name": "FACUNDO ALVAREZ",
+    "email": "facu995electro@hotmail.com",
+    "pass": "test1234",
+    "photo": "https://res.cloudinary.com/dz9smi3nc/image/upload/v1666780762/shop-mugs/users-profile-photo/iam_cpb5lk.png",
+    "small_photo" :"https://res.cloudinary.com/dz9smi3nc/image/upload/v1666898618/shop-mugs/navSvgs/iamlitle_l5d2ms.png",
+    "user_type": "user"
+  },
+  {
+    "id": 2,
+    "full_name": "Perez Alvarez",
+    "email": "perez23309230@hotmail.com",
+    "pass": "test1234",
+    "photo": "https://res.cloudinary.com/dz9smi3nc/image/upload/v1666261189/shop-mugs/users-profile-photo/20211103_142018_iggujc.png",
+    "user_type": "admin"
+  }
+]
