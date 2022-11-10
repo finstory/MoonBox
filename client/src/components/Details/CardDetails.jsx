@@ -26,12 +26,32 @@ export const CardDetails = () => {
             </div>
           </div>
           <div className="category">
-            <p>ANIME | MANGA</p>
+            <p>ANIME & MANGA</p>
           </div>
         </div>
 
-        <div className="info-box"></div>
-        <div className="info-box"></div>
+        <div className="info-box">
+          <p>
+            {/* {"Lorem ipsum is placeholder text commonly ishing industries for previewing .".toUpperCase()} */}
+            {"this mugs is microwave safe & strong to falls. it have height of 9.5cm and diameter of 8.0cm.".toUpperCase()}
+          </p>
+        </div>
+        <div className="info-box">
+          <div className="price">
+            <p>$ 6.00</p>
+          </div>
+          <div className="btn-gruop">
+            <div className="buy-now">
+              <p> BUY NOW</p>
+            </div>
+            <div className="cart">
+              <img
+                src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1667477135/shop-mugs/navSvgs/shopping-cart-icon_1_qbqf7r_1_raj10e.png"
+                alt="cart"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
