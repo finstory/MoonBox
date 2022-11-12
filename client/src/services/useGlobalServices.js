@@ -224,7 +224,6 @@ export const useGlobalServices = () => {
     const itemExistsInFavorites = (idItem) => {
         const { favorites: { listItemId, listFavorites } } = global;
         const foundItem = listItemId.filter(item => (item.id === idItem));
-        console.log(foundItem)
         if (foundItem.length) return true; else return false;
     }
 

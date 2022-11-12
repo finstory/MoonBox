@@ -5,14 +5,14 @@ import { BtnCarousel } from "./BtnCarousel";
 
 export const CarouselMain = () => {
   const {
-    goPageCarousel,
+    goPageHome,
     global,
     home: {
       carousel: { list },
     },
   } = useHomeServices();
   useEffect(() => {
-    goPageCarousel(1);
+    goPageHome(1);
   }, [global.filtersCarousel]);
   return (
     <div className="main-box">

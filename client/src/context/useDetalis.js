@@ -5,13 +5,7 @@ export const DetalisContext = createContext();
 export const useDetalis = () => {
 
     const initialState = {
-        count: {
-            num: 2,
-            string: "asdasdas"
-        },
-        algo: {
-            string: "asdasdas"
-        }
+        item: {},
     };
 
     function Details(state, action) {

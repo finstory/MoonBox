@@ -11,7 +11,7 @@ export const useHomeServices = () => {
     const idParam = parseInt(param.id) || 1;
 
 
-    const goPageCarousel = async (num, limit = 4) => {
+    const goPageHome = async (num, limit = 4) => {
 
         let payload = { carousel: { ...home.carousel, list: [], maxPage: 2, actualPage: 1 } };
         const category = global.filtersCarousel.category;
@@ -109,5 +109,5 @@ export const useHomeServices = () => {
     };
 
 
-    return { goPageCarousel, idParam, global, home };
+    return { goPageHome, idParam, global, home };
 }

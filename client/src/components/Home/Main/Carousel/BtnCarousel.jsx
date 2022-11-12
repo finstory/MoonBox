@@ -4,7 +4,7 @@ import { useGlobalContext } from "../../../../context/useGlobal";
 import { useHomeServices } from "../../../../services/useHomeServices";
 export const BtnCarousel = () => {
   const {
-    goPageCarousel,
+    goPageHome,
     home: {
       carousel: { actualPage, maxPage },
     },
@@ -36,7 +36,7 @@ export const BtnCarousel = () => {
           opacity: leftCodition ? ".5" : "",
         }}
         onClick={() => {
-          !leftCodition &&  goPageCarousel(actualPage - 1);
+          !leftCodition &&  goPageHome(actualPage - 1);
         }}
       >
         <img src={img.arrow} alt="arrow left carousel" />
@@ -48,7 +48,7 @@ export const BtnCarousel = () => {
           opacity: rigthCondition ? ".5" : "",
         }}
         onClick={() => {
-          !rigthCondition && goPageCarousel(actualPage + 1);
+          !rigthCondition && goPageHome(actualPage + 1);
         }}
       >
         <img src={img.arrow} alt="arrow rigth carousel" />

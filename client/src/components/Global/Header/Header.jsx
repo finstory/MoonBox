@@ -13,7 +13,7 @@ export const Header = () => {
       <NavBar />
       <Advertising />
       <SearchBar />
-      <Filters />
+      {/* <Filters /> */}
     </header>
   );
 };

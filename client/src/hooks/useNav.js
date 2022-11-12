@@ -5,8 +5,13 @@ export const useNav = () => {
 
   const navigate = useNavigate();
 
-  const goHome = () => {
-    navigate("/home/1");
+  const goHome = (id) => {
+    navigate("/");
+
+  }
+
+  const goDetails = (id) => {
+    navigate(`/details/${id}`);
   }
 
   const redirectPage = (id) => {
@@ -17,9 +22,6 @@ export const useNav = () => {
     navigate(-1);
   }
 
-  const redirectDetails = (id) => {
-    navigate(`/details/${id}`);
-  }
 
-  return ({ goHome,goBack, redirectDetails,redirectPage })
+  return ({ goHome, goBack, goDetails, redirectPage })
 }

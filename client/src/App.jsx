@@ -11,6 +11,8 @@ import "./assets/styles/login.css";
 import "./assets/styles/slideProfile.css";
 import "./assets/styles/mugsLimited.css";
 import "./assets/styles/details.css";
+import "./assets/styles/fullView.css";
+
 
 const App = () => {
 

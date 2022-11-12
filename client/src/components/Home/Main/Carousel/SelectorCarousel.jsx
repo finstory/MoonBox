@@ -3,7 +3,7 @@ import { useHomeServices } from "../../../../services/useHomeServices";
 
 export const SelectorCarousel = () => {
   const {
-    goPageCarousel,
+    goPageHome,
     home: {
       carousel: { actualPage, maxPage },
     },
@@ -22,7 +22,7 @@ export const SelectorCarousel = () => {
         className="selector-btn-box"
         style={{ backgroundColor: colorSelected(i) }}
         onClick={() => {
-          goPageCarousel(i);
+          goPageHome(i);
         }}
       ></div>
     );

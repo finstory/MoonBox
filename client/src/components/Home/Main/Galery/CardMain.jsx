@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useManagerText } from "../../../../hooks/useManagerText";
+import { useNav } from "../../../../hooks/useNav";
 import { useGlobalServices } from "../../../../services/useGlobalServices";
 
 export const CardMain = ({
@@ -19,6 +20,8 @@ export const CardMain = ({
       favorites: { listItemId },
     },
   } = useGlobalServices();
+  const { goDetails } = useNav();
+
   const { limitString } = useManagerText();
   sub_name = limitString(sub_name, 20);
   name = limitString(name, 17);
@@ -36,20 +39,36 @@ export const CardMain = ({
     }
   };
 
-  listItemId && console.log(itemExistsInFavorites(1));
-
   const switchItemInFav = () => {
     itemExistsInFavorites(id)
-    ? deleteItemInFavorites(id)
-    : addItemInFavorites(id)
+      ? deleteItemInFavorites(id)
+      : addItemInFavorites(id);
+  };
+  const [triggerFav, setTriggerFav] = useState(true);
+
+  const onTriggerFav = (cond) => {
+    setTriggerFav(cond);
   };
 
   if (listItemId)
     return (
-      <div className="card">
+      <div
+        className="card-home"
+        onPointerDownCapture ={() => {setTriggerFav(true)}}
+        onClick={() => {
+          triggerFav && goDetails(id);
+        }}
+      >
         <div
           className={`card-btn-favorites`}
           onClick={switchItemInFav}
+          // onPointerEnter={() => {setTriggerFav(false)}}
+          // onPointerDown={() => {setTriggerFav(true)}}
+          // onPointerLeave={() => {setTriggerFav(true)}}
+          // onPointerUp={() => {setTriggerFav(false)}}
+          // onPointerEnter={() => {setTriggerFav(false)}}
+          onPointerDown={() => {setTriggerFav(false)}}
+       
         >
           <img
             src={
