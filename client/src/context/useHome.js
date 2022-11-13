@@ -8,7 +8,15 @@ export const useHome = () => {
             list: [],
             maxPage: 2,
             actualPage: 1,
+        },
+        filtersHome: {
+            material: "show all",
+            category: "show all",
+            price: "none",
+            type: "show all",
+            search: ""
         }
+        , activeFullView: false,
     };
 
     function Home(state, action) {

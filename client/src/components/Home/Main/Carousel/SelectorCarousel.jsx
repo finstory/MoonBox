@@ -4,6 +4,7 @@ import { useHomeServices } from "../../../../services/useHomeServices";
 export const SelectorCarousel = () => {
   const {
     goPageHome,
+    switchFullView,
     home: {
       carousel: { actualPage, maxPage },
     },
@@ -32,7 +33,12 @@ export const SelectorCarousel = () => {
     <div className="main-box">
       <div className="selector-carousel">
         <div className="selector-btn">{listBtn}</div>
-        <div className="view-all">
+        <div
+          className="view-all"
+          onClick={() => {
+            switchFullView(true);
+          }}
+        >
           <p>VIEW ALL</p>
         </div>
       </div>

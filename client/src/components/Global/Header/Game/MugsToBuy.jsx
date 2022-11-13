@@ -81,6 +81,7 @@ export const MugsToBuy = () => {
   }, [global.mugsLimited.active]);
 
 
+
   if (activeGame)
     return (
       <>

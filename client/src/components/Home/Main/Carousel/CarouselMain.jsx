@@ -9,11 +9,12 @@ export const CarouselMain = () => {
     global,
     home: {
       carousel: { list },
+      filtersHome : {search}
     },
   } = useHomeServices();
   useEffect(() => {
     goPageHome(1);
-  }, [global.filtersCarousel]);
+  }, [global.filtersCarousel,search]);
   return (
     <div className="main-box">
       <BtnCarousel />

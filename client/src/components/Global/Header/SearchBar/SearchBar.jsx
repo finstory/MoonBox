@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { img } from "../../../../assets/images";
 import { useGlobalContext } from "../../../../context/useGlobal";
-
+import { useHomeContext } from "../../../../context/useHome";
+import { useForm } from "../../../../hooks/useForm";
+import { useManagerText } from "../../../../hooks/useManagerText";
 export const SearchBar = () => {
   const {
     global: { gameAdv },
     setGlobal,
   } = useGlobalContext();
+  const {
+    home: { filtersHome,activeFullView },
+    setHome,
+  } = useHomeContext();
+  const { allFirstUpperCase } = useManagerText();
+
+  const [values, handleInputChange, reset] = useForm({name: ""});
+  const { name } = values;
+  const inputSubmit = (e) => {
+    e.preventDefault();
+    setHome({ filtersHome: { ...filtersHome, search: values.name } });
+  };
 
   const focusInput = (condition) => {
     setGlobal({ gameAdv: { ...gameAdv, isFocus: condition } });
   };
+
+  useEffect(() => {
+    values &&
+      !values.name &&
+      setHome({ filtersHome: { ...filtersHome, search: values.name } });
+  }, [values]);
+
+useEffect(() => {
+  !activeFullView && reset();
+}, [activeFullView])
+
 
   return (
     <div className="header-box">
@@ -19,16 +44,31 @@ export const SearchBar = () => {
           <p>MOONBOX</p>
         </div>
         <div className="search-box">
-          <div className="input-box">
-            <div className="svg-glass">
+          <form onSubmit={inputSubmit} className="input-box">
+            <button
+              type="submit"
+              className="svg-glass"
+              style={{
+                decoration: "none",
+                backgroundColor: "transparent",
+                border: 0,
+              }}
+            >
               <img src={img.glass} alt="place" />
-            </div>
-            <div style={{ zIndex: 40 }}>
-              <input type="text" placeholder="Search your favorites Mugs"
+            </button>
+            <div onSubmit={inputSubmit} style={{ zIndex: 40 }}>
+              <input
+                name="name"
+                type="text"
+                placeholder="Search your favorites Mugs"
+                autoComplete="off"
+                value={allFirstUpperCase(name)}
+                onChange={handleInputChange}
               />
             </div>
-          </div>
+          </form>
         </div>
+
         <div className="search-box">
           <div className="svg-flex">
             <div className="svg-box">

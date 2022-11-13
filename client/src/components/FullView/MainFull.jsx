@@ -24,16 +24,17 @@ export const MainFull = () => {
         global,
         home: {
           carousel: { list },
+          filtersHome
         },
       } = useHomeServices();
       useEffect(() => {
+        console.log(filtersHome)
         goPageHome(1,9999);
-      }, [global.filtersCarousel]);
+      }, [filtersHome]);
 
   return (
     <div className="main-full">
      <FiltersFull/>
-
       <main className="galery-container">
     <div className="galery">
 

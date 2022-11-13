@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Dragon Ball Super",
     "sub_name": "Goku Ultra Instict",
-    "image": "https://res.cloudinary.com/dz9smi3nc/image/upload/v1666330116/shop-mugs/items/dbs_hnoos7.png",
+    "image": "https://res.cloudinary.com/dz9smi3nc/image/upload/v1667914563/shop-mugs/items/IMAGE_iltip4.png",
     "full_image": "https://res.cloudinary.com/dz9smi3nc/image/upload/v1667294262/shop-mugs/items/Photo_Full/ultra-instinct_5bfk.1280_eusmqf.webp",
     "description": "lorem Ipsum is Lorem Ipsum but I love Lorem Ipsum but I don't like Lorem Ipsum and I don't like Lorem Ipsum",
     "type": "Magic",
@@ -32,6 +32,7 @@
     "description": "lorem Ipsum is Lorem Ipsum but I love Lorem Ipsum but I don't like Lorem Ipsum and I don't like Lorem Ipsum",
     "type": "Moon",
     "price": "4.50",
+    "category1": "ilustration",
     "category2": "moon"
   },
   {
@@ -356,7 +357,7 @@
     "type": "Limited",
     "id_limited": "yoda",
     "price": "8.00",
-    "category1": "anime",
+    "category1": "movies",
     "category2": "limited"
   },
   {
@@ -369,7 +370,7 @@
     "description": "lorem Ipsum is Lorem Ipsum but I love Lorem Ipsum but I don't like Lorem Ipsum and I don't like Lorem Ipsum",
     "type": "Limited",
     "id_limited": "mario",
-    "price": "8.00",
+    "price": "5.00",
     "category1": "gamers",
     "category2": "limited"
   },

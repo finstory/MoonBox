@@ -8,7 +8,7 @@ export const AppMain = () => {
 
   const keyDownTextField = (e) => {
     const item = JSON.parse(window.localStorage.getItem("cart"));
-    if (e.code === "KeyE")
+    if (item.mug.length && e.code === "KeyE")
       setGlobal({
         mugsLimited: {
           ...global.mugsLimited,
@@ -28,9 +28,6 @@ export const AppMain = () => {
     }
   };
 
-  useEffect(() => {
-    // console.log(global.mugsLimited)
-  });
 
   useEffect(() => {
     window.localStorage.setItem("cart", JSON.stringify({ mug: "" }));
