@@ -8,6 +8,7 @@ import { Header } from "../components/Global/Header/Header";
 import { FullView } from "../pages/FullView";
 import { Home } from "../pages/Home";
 import { useGlobalServices } from "../services/useGlobalServices";
+import { useHomeServices } from "../services/useHomeServices";
 
 export const AppRouter = () => {
   const { getCart, getFavorites, addItemInFavorites } = useGlobalServices();
@@ -15,12 +16,16 @@ export const AppRouter = () => {
     getCart();
     getFavorites();
   }, []);
+  const {
+    home: { activeFullView },
+  } = useHomeServices();
   return (
     <>
       <MugsToBuy />
       <Auth />
       <Header />
-      <main className="main-index">
+      <main className="main-index"
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<Home />} />

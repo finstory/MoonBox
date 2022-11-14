@@ -1,9 +1,10 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     max-width: 130em;
+    min-height: 60rem;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -12,290 +13,313 @@
 .card-details {
     display: flex;
     align-items: center;
-    width: 100rem;
-    height: 30rem;
-    margin: 5.2rem 0;
-    margin-top: 5.4rem;
-    /* background-color: rgb(68, 60, 49); */
+    flex-direction: column;
+    width: 45rem;
+    height: 44rem;
+    margin: 2.5rem 0;
+    /* margin-top: 5.4rem; */
+    background-color: #22192b82;
+    /* background-color: #433c4fe8; */
+    border-radius: 2rem;
 }
 
 .card-details-box:nth-child(1) {
     display: flex;
+    justify-content: start;
+    align-items: center;
     flex-direction: column;
-    justify-content: center;
-    gap: 0;
-    align-items: center;
-    flex-basis: 32%;
-    height: 100%;
-    background-color: #2e203a77;
-    background-color: #2e203a77;
-    border-radius: 1rem 0 0 1rem;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 6px #857a9c4c;
-    /* border: .3rem solid #28242c2a; */
-    border-right: 0;
-}
+    flex-basis: 20%;
+    width: 100%;
 
-.card-details-box:nth-child(1) .img-wrap {
-    display: flex;
-    flex-basis: 60%;
-    /* width: 100%; */
-    /* background-color: #b3aba077; */
 
 }
 
-.card-details-box:nth-child(1) .img-wrap img {
-    /* display: inline-block; */
-    width: 25rem;
-    /* margin-top: 1rem; */
+.card-details-box:nth-child(1) p {
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    line-height: 2rem;
+    margin: 0;
+    margin-top: 1.2rem;
+    padding: .8rem;
     border-radius: 1rem;
-    opacity: .86;
-    box-shadow: 0px 0px 4px #cac7d2cc;
+    background-color: #74668182;
 }
 
-.card-details-box:nth-child(1) .btn-wrap {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-basis: 15%;
-    margin-top: 1.3rem;
-    margin-bottom: .4rem;
-    width: 80%;
-    font-size: 2.5rem;
-    line-height: 3.5rem;
-    /* background-color: #7c711c77; */
-}
-
-.card-details-box:nth-child(1) .btn-wrap .type {
-    /* color: #f0f0f0; */
-    padding: 0 1.5rem;
-    border-radius: 1.3rem;
-    cursor: pointer;
-    opacity: .93;
-}
-
-.card-details-box:nth-child(1) .btn-wrap .view-full {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: .5rem;
-    font-size: 2.3rem;
-    padding: 0 1.2rem;
-    border-radius: 1.3rem;
-    height: 3.5rem;
-    cursor: pointer;
-    background-color: #5f5b63c2;
-    background-color: #3e372ebd;
-    background-color: #ebe9e8bb;
-    color: #482e5dbd;
-    text-shadow: 0px 0px 2px #2b2233a2;
-    transition: background-color .5s;
-}
-
-.card-details-box:nth-child(1) .btn-wrap .view-full:hover {
-    transition: background-color .5s;
-    background-color: #e9e8ece2;
-}
-
-.card-details-box:nth-child(1) .btn-wrap .view-full img {
-height: 70%;
-opacity: .9;
+.card-details-box:nth-child(1) p:nth-child(2) {
+    font-size: 1.8rem;
+    padding: .5rem;
+    margin: 0;
+    background-color: #39343dbc;
+    border-radius: 0 0 1rem 1rem;
 }
 
 .card-details-box:nth-child(2) {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-basis: 68%;
-    height: 100%;
-    border-radius: 0 1rem 1rem 0;
-    box-sizing: border-box;
-    /* border: .3rem solid #28242c2a; */
-    box-shadow: 0px 0px 6px #857a9c4c;
-    background-color: #2e203a77;
-}
-
-.card-details-box:nth-child(2) .info-box {
-    flex-basis: 33.3%;
+    flex-basis: 66%;
     width: 100%;
 
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(1) {
-    display: flex;
-    justify-content: space-between;
-    flex-basis: 25%;
-    padding: 2rem 0;
-    /* background-color: rgba(255, 235, 205, 0.367); */
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(1) .title {
+.card-details-box:nth-child(2) .img-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
-    flex-basis: 55%;
-    /* height: 100%; */
-    /* background-color: burlywood; */
+    align-items: center;
+    width: 88%;
+    height: 94%;
+    border-radius: 1rem;
+    background-color: rgba(220, 214, 224, 0.54);
+    background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/o_80/v1667914563/shop-mugs/items/IMAGE_iltip4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(1) .title .wrap {
+
+/** Mug characteristics 1*/
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(1) {
     display: flex;
     align-items: center;
-    margin-left: 1.7rem;
-    padding: 0;
-    /* background-color: #8223d177; */
+    justify-content: space-between;
+    flex-basis: 13%;
+    width: 90%;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(1) .title .wrap:nth-child(1) p {
-    display: inline-block;
-    margin: 0 1rem;
-    font-size: 3.4rem;
-    line-height: 3rem;
-    padding: .3rem 1rem;
-    border-radius: 1rem;
-    background-color: #2823365f;
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(1) .title .wrap:nth-child(2) p {
-    margin: .3rem 1rem .3rem 1rem;
-    font-size: 2.6rem;
-    line-height: 3rem;
-    padding: 0rem 1rem;
-    border-radius: 1rem;
-    background-color: #2823365f;
-}
-
-
-.card-details-box:nth-child(2) .info-box:nth-child(1) .category {
-    text-align: center;
-    flex-basis: 40%;
+.card-details-box:nth-child(2) .info-wrap .desc-box {
+    flex-basis: 30%;
     height: 100%;
-    /* background-color: aliceblue; */
-
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(1) .category p {
-    display: inline-block;
-    margin: 0;
-    font-size: 2.6rem;
-    line-height: 3rem;
-    padding: .3rem 1rem;
+    opacity: .9;
     border-radius: 1rem;
-    background-color: #2823365f;
+    background: linear-gradient(90deg, #dddcde 0%, #d2d1d4f5 90%);
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(2) {
+/*$ Mug characteristics 1 */
+
+/** Mug characteristics 2 */
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-basis: 38%;
+    justify-content: space-between;
     width: 92%;
-    /* background-color: antiquewhite; */
+    flex-basis: 38%;
+    /* background-color: #5952645c; */
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-type {
+    text-align: center;
+    flex-basis: 25%;
 
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(2) p {
-    margin: 0;
-    padding: 0 1rem;
-    line-height: 4rem;
-    font-size: 2.4rem;
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-type p {
+    display: inline-block;
+    line-height: 1rem;
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+    margin: 0%;
+    margin-left: 1.7rem;
+    padding: .8rem;
     border-radius: 1rem;
-    background-color: #2f2c3878;
-    background-color: #2823365f;
+    opacity: .9;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(3) {
-    margin-top: .7frem;
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit {
+    flex-basis: 35%;
+    width: 100%;
+    margin-bottom: .5rem;
+    /* background-color: #3f38463d; */
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 92%;
-    /* background-color: #59515f77; */
+    font-size: 1.8rem;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(3) .price {}
-
-.card-details-box:nth-child(2) .info-box:nth-child(3) .price p {
-    font-size: 2.8rem;
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .price {
+    background-color: #63576fb8;
     border-radius: 1rem;
-    line-height: 3.6rem;
+    line-height: 2.4rem;
+    padding: .3rem 1rem;
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .favorites {
+    height: 2.7rem;
+    margin-right: .5rem;
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .favorites img{
+    height: 100%;
+
+}
+
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .amount {
+    background-color: #63576fb8;
+    border-radius: 1rem;
+    line-height: 2.4rem;
+    margin-right: 1rem;
+    padding: .3rem 1rem;
+}
+
+/*$ Mug characteristics 2 */
+
+
+
+
+
+
+
+
+
+/* * 3 section */
+.card-details-box:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    flex-basis: 12%;
+    width: 100%;
+    /* background-color: rgb(69, 62, 76); */
+
+}
+
+.card-details-box:nth-child(3) .btn-gruop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 84%;
+    height: 100%;
+
+}
+
+.card-details-box:nth-child(3) .btn-box {
+    font-size: 1.8rem;
+    background-color: #74668182;
     padding: 0 1rem;
-    background-color: #242033cd;
-    background-color: #3e372ebd;
-    background-color: #2823365f;
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop {
-    display: flex;
-    align-items: center;
-    width: 19.2rem;
-    height: 3.8rem;
     border-radius: 1rem;
-
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .buy-now {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 67%;
-    height: 100%;
-    border-radius: 1rem 0 0 1rem;
-    transition: background-color .5s;
-    background-color: #ebe9e8b3;
-    color: #482e5dbd;
-    text-shadow: 0px 0px 2px #2b2233a2;
     cursor: pointer;
-
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .buy-now:hover {
-    transition: background-color .5s;
-    background-color: #e9e8ece2;
+
+.card-details-box:nth-child(3) .btn-box:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 6rem;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .buy-now p {
-    display: inline-block;
-    margin: 0;
+.card-details-box:nth-child(3) .btn-box:nth-child(1) p {
     line-height: 1rem;
-    font-size: 2.8rem;
-    border-radius: 1rem;
-
+    margin: 1rem 0;
 }
 
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .cart {
+.card-details-box:nth-child(3) .btn-box:nth-child(1) img {
+    height: 1.5rem;
+}
+
+.card-details-box:nth-child(3) .btn-box:nth-child(2) {
+    margin-left: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 22%;
+    gap: .5rem;
+    background-color: #e7e3ea;
+    background: linear-gradient(90deg, #dddcde 0%, #d2d1d4f5 90%);
+}
+
+.card-details-box:nth-child(3) .btn-box:nth-child(2) p {
+    font-size: 1.9rem;
+    line-height: 1rem;
+    margin: 1rem 0;
+    color: #3f3846;
+    color: #595264;
+    text-shadow: 0px 0px 3px #2e2437a2;
+}
+
+
+.card-details-box:nth-child(3) .btn-box:nth-child(3) {
+    display: flex;
+    padding: 0;
+    width: 7.5rem;
+
+
+}
+
+.card-details-box:nth-child(3) .btn-box:nth-child(3) .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
     height: 100%;
-    border-radius: 0 1rem 1rem 0;
-    background-color: #5551595a;
-    transition: background-color .5s;
-    background-color: #2823365f;
-    cursor: pointer;
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .cart:hover {
-    transition: background-color .5s;
-    background-color: #44395cd0;
-}
-
-.card-details-box:nth-child(2) .info-box:nth-child(3) .btn-gruop .cart img {
-
-    width: 60%;
+    box-sizing: content-box;
+    /* background-color: #dddcde; */
 
 }
+
+.card-details-box:nth-child(3) .btn-box:nth-child(3) .wrap:nth-child(1) {
+    border: 2px solid #dddcdead;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.card-details-box:nth-child(3) .btn-box:nth-child(3) p {
+    font-size: 2.6rem;
+    line-height: .9rem;
+    margin: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn-back {
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: .1rem;
     gap: .3rem;
-    width: 17rem;
+    width: 15rem;
     height: 4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     transition: background-color .5s;
     background-color: #22192b82;
     border-radius: 1rem;
@@ -319,15 +343,15 @@ opacity: .9;
 .btn-back img {
     display: block;
 
-    height: 45%;
+    height: 40%;
 }
 
 .btn-back p {
     margin-right: .8rem;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
 }
 
-.card-btn-favorites-detais{
+.card-btn-favorites-detais {
     position: absolute;
     z-index: 3;
     top: 9rem;

@@ -4,7 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 55rem;
+    min-height: 60rem;
+        /* min-height: 62.5rem; */
+    /* min-height: 57.1rem; */
     /* background-image: url("https://i.postimg.cc/SxrN1dwD/back-cxgc5t.png"); */
     /* background: linear-gradient(188deg, #2a2a2a 0%, #151515ec 80%); */
     background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/v1667168426/shop-mugs/722756_mpq8ip.png");
@@ -74,7 +76,7 @@
 
 .carousel {
     position: relative;
-    margin: 4rem 0;
+    margin: 6rem 0 6rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -314,6 +316,10 @@
     border-radius: 2rem;
     cursor: pointer;
     box-shadow: 0px 1px 6px #0e0d0fd5;
+}
+
+.view-all{
+    margin-top: .5rem;
 }
 
 .view-all p {

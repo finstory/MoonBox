@@ -14,8 +14,8 @@ export const Main = () => {
     <>
       {activeFullView ? (
         <MainFull />
-      ) : (
-        <>
+        ) : (
+          <>
           <CarouselMain />
           <SelectorCarousel />
         </>
