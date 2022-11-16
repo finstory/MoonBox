@@ -11,19 +11,21 @@
 }
 
 .card-details {
+
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 45rem;
-    height: 44rem;
+    height: 45rem;
     margin: 2.5rem 0;
     /* margin-top: 5.4rem; */
-    background-color: #22192b82;
+    background-color: #3c2e4a85;
     /* background-color: #433c4fe8; */
     border-radius: 2rem;
 }
 
 .card-details-box:nth-child(1) {
+    position: relative;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -35,21 +37,23 @@
 }
 
 .card-details-box:nth-child(1) p {
-    font-size: 3rem;
-    letter-spacing: .2rem;
-    line-height: 2rem;
+    font-size: 2.3rem;
+    letter-spacing: .3rem;
+    line-height: 1.6rem;
     margin: 0;
-    margin-top: 1.2rem;
+    margin-top: 1.6rem;
     padding: .8rem;
     border-radius: 1rem;
-    background-color: #74668182;
+    background-color: #473c5495;
+    background-color: #63576fa3;
 }
 
 .card-details-box:nth-child(1) p:nth-child(2) {
     font-size: 1.8rem;
     padding: .5rem;
     margin: 0;
-    background-color: #39343dbc;
+    background-color: #39343dc2;
+    background-color: #413a479f;
     border-radius: 0 0 1rem 1rem;
 }
 
@@ -57,44 +61,148 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 66%;
+    flex-basis: 68%;
     width: 100%;
 
 }
 
-.card-details-box:nth-child(2) .img-wrap {
+.card-details-box:nth-child(2) .img-wrap,
+.card-details-box:nth-child(2) .img-wrap-cold {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 88%;
-    height: 94%;
+    height: 100%;
     border-radius: 1rem;
-    background-color: rgba(220, 214, 224, 0.54);
-    background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/o_80/v1667914563/shop-mugs/items/IMAGE_iltip4.png");
+    background-color: #f7f6f6f8;
+    /* background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/o_90/v1667914563/shop-mugs/items/IMAGE_iltip4.png"); */
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-size: contain;
+    background-position: center 10px;
+    /* transition: background-image .4s; */
 }
 
+.card-details-box:nth-child(2) .img-wrap-cold {
+    width: 100%;
+    background-color: transparent;
+}
 
 /** Mug characteristics 1*/
 
 .card-details-box:nth-child(2) .info-wrap:nth-child(1) {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-basis: 13%;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-basis: 14%;
+
     width: 90%;
+    opacity: .9;
+    margin-top: .5rem;
+
 }
 
-.card-details-box:nth-child(2) .info-wrap .desc-box {
-    flex-basis: 30%;
-    height: 100%;
+.card-details-box:nth-child(2) .desc-box {
+    display: flex;
+    flex-basis: 28%;
+    height: 4rem;
     opacity: .9;
+    color: #595264;
     border-radius: 1rem;
-    background: linear-gradient(90deg, #dddcde 0%, #d2d1d4f5 90%);
+    background: linear-gradient(90deg, #dddcdd 0%, #cecdd0f5 90%);
 }
+
+.card-details-box:nth-child(2) .desc-box .wrap:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+    height: 100%;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap:nth-child(1) img {
+    height: 50%;
+    opacity: .9;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap:nth-child(3) img {
+    height: 10%;
+    opacity: .9;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 80%;
+    height: 100%;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap:nth-child(2) p {
+    line-height: 1.4rem;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 0 .1rem;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 3.8rem;
+    margin-top: .1rem;
+    color: #f0f0f0ee;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp p {
+    line-height: 1.8rem;
+    font-size: 1rem;
+    margin: 0rem;
+    padding: 0;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp .temp {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a1bd5;
+    border-radius: 1rem 1rem 0 0;
+
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp .btn-switch {
+    flex-basis: 55%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp .cold:hover,
+.card-details-box:nth-child(2) .desc-box .wrap-temp .hot:hover {
+    background-color: #4d465de2;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp .cold {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-basis: 50%;
+    border-radius: 0 0 0 1rem;
+    background-color: #514a59b3;
+}
+
+.card-details-box:nth-child(2) .desc-box .wrap-temp .hot {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 1rem 0;
+    background-color: #514a59b3;
+}
+
 
 /*$ Mug characteristics 1 */
 
@@ -104,9 +212,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
     width: 92%;
-    flex-basis: 38%;
+    flex-basis: 48.5%;
     /* background-color: #5952645c; */
 }
 
@@ -122,50 +230,59 @@
     font-size: 1.6rem;
     letter-spacing: .1rem;
     margin: 0%;
-    margin-left: 1.7rem;
-    padding: .8rem;
+    /* margin-left: 1.5rem; */
+    padding: .8rem 1.3rem;
     border-radius: 1rem;
-    opacity: .9;
+    opacity: .8;
 }
 
-.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit {
-    flex-basis: 35%;
-    width: 100%;
-    margin-bottom: .5rem;
-    /* background-color: #3f38463d; */
-}
+
+
+
 
 .card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-basis: 35%;
+    width: 100%;
     font-size: 1.8rem;
 }
 
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 33%;
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit-box:nth-child(1) {
+    justify-content: start;
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit-box:nth-child(2) {
+    margin-left: .6rem;
+}
+
+.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit-box:nth-child(3) {
+    justify-content: end;
+}
+
 .card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .price {
-    background-color: #63576fb8;
+    background-color: #63576fa3;
     border-radius: 1rem;
-    line-height: 2.4rem;
+    line-height: 2.1rem;
     padding: .3rem 1rem;
-}
-
-.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .favorites {
-    height: 2.7rem;
-    margin-right: .5rem;
-}
-
-.card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .favorites img{
-    height: 100%;
-
 }
 
 
 .card-details-box:nth-child(2) .info-wrap:nth-child(2) .info-edit .amount {
-    background-color: #63576fb8;
     border-radius: 1rem;
-    line-height: 2.4rem;
-    margin-right: 1rem;
-    padding: .3rem 1rem;
+    line-height: 2.1rem;
+    margin-right: 0rem;
+    padding: .3rem 2rem;
+
+    background-color: #63576fa3;
 }
 
 /*$ Mug characteristics 2 */
@@ -199,7 +316,7 @@
 
 .card-details-box:nth-child(3) .btn-box {
     font-size: 1.8rem;
-    background-color: #74668182;
+    background-color: #63576fa3;
     padding: 0 1rem;
     border-radius: 1rem;
     cursor: pointer;
@@ -216,15 +333,17 @@
 
 .card-details-box:nth-child(3) .btn-box:nth-child(1) p {
     line-height: 1rem;
+    letter-spacing: 1px;
     margin: 1rem 0;
 }
 
 .card-details-box:nth-child(3) .btn-box:nth-child(1) img {
     height: 1.5rem;
+    margin-bottom: 1px;
 }
 
 .card-details-box:nth-child(3) .btn-box:nth-child(2) {
-    margin-left: .5rem;
+    /* margin-left: .5rem; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,10 +355,11 @@
 .card-details-box:nth-child(3) .btn-box:nth-child(2) p {
     font-size: 1.9rem;
     line-height: 1rem;
+    letter-spacing: 1px;
     margin: 1rem 0;
     color: #3f3846;
-    color: #595264;
-    text-shadow: 0px 0px 3px #2e2437a2;
+    color: #595264be;
+    text-shadow: 0px 0px 3px #2e2437a0;
 }
 
 
@@ -276,14 +396,39 @@
 }
 
 
+/* * buttoms aditionals */
 
+.card-details-box:nth-child(1) .btn-aditional {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+    /* background-color: #63487d85; */
+}
 
+.card-details-box:nth-child(1) .favorites {
+    height: 2.6rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
 
+.card-details-box:nth-child(1) .favorites img {
+    height: 100%;
+    opacity: .9;
 
+}
 
-
-
-
+.card-details-box:nth-child(1) .close p {
+    background-color: transparent;
+    font-size: 4rem;
+    line-height: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.3rem;
+    margin: 0%;
+    cursor: pointer;
+}
 
 
 
@@ -317,13 +462,14 @@
     align-items: center;
     letter-spacing: .1rem;
     gap: .3rem;
-    width: 15rem;
+    width: 9rem;
     height: 4rem;
     margin-bottom: 2rem;
     transition: background-color .5s;
-    background-color: #22192b82;
+    background-color: #3c2e4a85;
     border-radius: 1rem;
     cursor: pointer;
+    opacity: .85;
 
 }
 
@@ -342,13 +488,12 @@
 
 .btn-back img {
     display: block;
-
-    height: 40%;
+    height: 30%;
 }
 
 .btn-back p {
     margin-right: .8rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .card-btn-favorites-detais {

@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Auth } from "../components/Auth/Auth";
-import { Details } from "../components/Details/Details";
 import { Footer } from "../components/Global/Footer/Footer";
 import { MugsToBuy } from "../components/Global/Header/Game/MugsToBuy";
 import { Header } from "../components/Global/Header/Header";
+import { Details } from "../pages/Details";
 import { FullView } from "../pages/FullView";
 import { Home } from "../pages/Home";
 import { useGlobalServices } from "../services/useGlobalServices";

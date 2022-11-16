@@ -5,7 +5,7 @@ export const useNav = () => {
 
   const navigate = useNavigate();
 
-  const goHome = (id) => {
+  const goHome = () => {
     navigate("/");
 
   }

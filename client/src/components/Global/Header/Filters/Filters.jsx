@@ -22,6 +22,11 @@ export const Filters = () => {
 
   useEffect(() => {
     getAllCategories();
+    return ()=>{
+      setGlobal({
+        filtersCarousel: { ...global.filtersCarousel, category : "" },
+      });
+    }
   }, []);
 
   return (

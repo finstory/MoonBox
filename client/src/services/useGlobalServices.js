@@ -128,12 +128,13 @@ export const useGlobalServices = () => {
             .catch((error) => { console.log(error) });
     }
 
-    const addItemInCart = async (idItem) => {
+    const addItemInCart = async (idItem, amount = 1) => {
         const { cart: { id = 1, listItemId, listCart } } = global;
         let payload = { listItemId, listCart, totalPrice: 0 };
         const itemExists = listItemId.filter(item => (item.id === idItem));
+
         if (itemExists && itemExists.length) return;
-        else payload.listItemId.push({ id: idItem, amount: 1 });
+        else payload.listItemId.push({ id: idItem, amount });
 
         const data = JSON.stringify({ "items": payload.listItemId });
         const config = {
@@ -149,7 +150,7 @@ export const useGlobalServices = () => {
                 await axios(`http://localhost:3001/mugs?id=${idItem}`)
                     .then((resp) => {
                         const data = resp.data[0];
-                        payload.listCart.push({ ...data, amount: 1 })
+                        payload.listCart.push({ ...data, amount })
                     })
                     .catch((e) => console.log(e));
 
@@ -275,5 +276,5 @@ export const useGlobalServices = () => {
 
     //$ Manager Game.
 
-    return { getAllMugsLimited, getAllCategories, switchModalProfile, getCart, editAmountItemInCart, deleteItemInCart, addItemInCart, searchItemLimited, getFavorites, deleteItemInFavorites, addItemInFavorites,itemExistsInFavorites, global, home };
+    return { getAllMugsLimited, getAllCategories, switchModalProfile, getCart, editAmountItemInCart, deleteItemInCart, addItemInCart, searchItemLimited, getFavorites, deleteItemInFavorites, addItemInFavorites, itemExistsInFavorites, global, home };
 }

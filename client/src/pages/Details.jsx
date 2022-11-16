@@ -1,8 +1,8 @@
 import React from "react";
-import { useNav } from "../../hooks/useNav";
-import { useDetailsServices } from "../../services/useDetailsServices";
-import { useGlobalServices } from "../../services/useGlobalServices";
-import { CardDetails } from "./CardDetails";
+import { CardDetails } from "../components/Details/CardDetails";
+import { useNav } from "../hooks/useNav";
+import { useDetailsServices } from "../services/useDetailsServices";
+import { useGlobalServices } from "../services/useGlobalServices";
 
 export const Details = () => {
   const { goHome } = useNav();
@@ -22,11 +22,11 @@ export const Details = () => {
         <div className="btn-back" onClick={goHome}>
           <div className="img-wrap">
             <img
-              src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1668106133/shop-mugs/navSvgs/arrow_back_tv6k1x.png"
+              src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1668472998/shop-mugs/navSvgs/back_cij8jw.png"
               alt="icon back"
             />
           </div>
-          <p>Go Back</p>
+          <p>Back</p>
         </div>
       </div>
     );
