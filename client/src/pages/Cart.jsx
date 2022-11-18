@@ -10,8 +10,10 @@ export const Cart = () => {
   const { goHome } = useNav();
   const { details, setDetails } = useDetailsContext();
   const {
+    editAmountItemInCart,
+    deleteItemInCart,
     global: {
-      cart: { listCart },
+      cart: { listCart, itemSelected },
     },
   } = useGlobalServices();
 
@@ -26,7 +28,9 @@ export const Cart = () => {
     return (
       <div className="details-container">
         <div className="cart-container">
-          <CardDetails />
+          <CardDetails
+            mugFromCart={listCart.find((item) => item.id === itemSelected)}
+          />
           <div className="list-cart">
             <div className="title">
               <p>List Cart</p>

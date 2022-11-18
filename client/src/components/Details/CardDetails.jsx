@@ -3,7 +3,7 @@ import { useDetailsContext } from "../../context/useDetalis";
 import { useNav } from "../../hooks/useNav";
 import { useDetailsServices } from "../../services/useDetailsServices";
 import { useGlobalServices } from "../../services/useGlobalServices";
-export const CardDetails = ({ mugFromHome }) => {
+export const CardDetails = ({ mugFromCart }) => {
   const {
     getItemById,
     details: { item, renderInCart },
@@ -12,20 +12,32 @@ export const CardDetails = ({ mugFromHome }) => {
     addItemInFavorites,
     deleteItemInFavorites,
     itemExistsInFavorites,
+    editAmountItemInCart,
+    deleteItemInCart,
     addItemInCart,
     global: {
       favorites: { listItemId },
+      cart: { itemSelected },
     },
   } = useGlobalServices();
   const { goHome } = useNav();
-  const mug = mugFromHome || item;
-
+  const mug = mugFromCart || item;
   const [amount, setAmount] = useState(1);
   const [mugTemp, setMugTemp] = useState(false);
 
+  useEffect(() => {
+    if (mugFromCart) setAmount(mug.amount || 1);
+  }, [mugFromCart]);
+
+  const updateAmountInRedux = (idItem, itemAmount, value) => {
+    if (value === -1 && itemAmount <= 1) return;
+    if (value === 1 && itemAmount >= 10) return;
+    editAmountItemInCart(idItem, itemAmount + value);
+  };
+
   const switchMugTemp = () => {
-    if (valueTemp) setMugTemp(item.image);
-    else setMugTemp(item.image_cold);
+    if (valueTemp) setMugTemp(mug.image);
+    else setMugTemp(mug.image_cold);
   };
 
   const updateAmount = (value) => {
@@ -57,20 +69,21 @@ export const CardDetails = ({ mugFromHome }) => {
     setTimeout(() => {
       setMugTemp(true);
     }, 1100);
-  }, []);
+    console.log("s")
+  }, [JSON.stringify(itemSelected)]);
 
   useEffect(() => {
-    item.type === "Magic" || item.type === "Limited"
+    mug.type === "Magic" || mug.type === "Limited"
       ? setMugTemp(false)
       : setMugTemp(true);
-  }, [item]);
+  }, [mug.id]);
 
-  if (item && item.image && listItemId)
+  if (mug && mug.image && listItemId)
     return (
       <div className="card-details">
         <div className="card-details-box">
-          <p className="title">{item.name}</p>
-          <p className="sub-title">{item.sub_name}</p>
+          <p className="title">{mug.name}</p>
+          <p className="sub-title">{mug.sub_name}</p>
           <div className="btn-aditional">
             <div className={`favorites`} onClick={switchItemInFav}>
               <img
@@ -101,17 +114,15 @@ export const CardDetails = ({ mugFromHome }) => {
             className="img-wrap"
             style={{
               transition:
-                item.type === "Magic" || item.type === "Limited"
+                mug.type === "Magic" || mug.type === "Limited"
                   ? "background-image .5s"
                   : "background-image 0s",
-              backgroundImage: `url("${
-                mugTemp ? item.image : item.image_cold
-              }")`,
+              backgroundImage: `url("${mugTemp ? mug.image : mug.image_cold}")`,
               opacity: 0.9,
             }}
           >
             <div className="info-wrap">
-              {(item.type === "Limited" || item.type === "Magic") && (
+              {(mug.type === "Limited" || mug.type === "Magic") && (
                 <div className="desc-box">
                   <div className="wrap">
                     <img
@@ -125,7 +136,7 @@ export const CardDetails = ({ mugFromHome }) => {
                 </div>
               )}
 
-              {(item.type === "Limited" || item.type === "Magic") && (
+              {(mug.type === "Limited" || mug.type === "Magic") && (
                 <div
                   className="desc-box"
                   style={{ flexBasis: "31%", background: "transparent" }}
@@ -173,7 +184,7 @@ export const CardDetails = ({ mugFromHome }) => {
                 <div className="info-edit-box">
                   <div
                     style={
-                      (item.price * amount > 10 && {
+                      (mug.price * amount > 10 && {
                         marginLeft: "-.3rem",
                         paddingLeft: ".8rem",
                       }) ||
@@ -181,12 +192,12 @@ export const CardDetails = ({ mugFromHome }) => {
                     }
                     className="price"
                   >
-                    $ {(item.price * amount).toFixed(2)}
+                    $ {(mug.price * amount).toFixed(2)}
                   </div>
                 </div>
                 <div className="info-edit-box">
                   <div className="info-type">
-                    <p className={`${colorType(item.type)}`}>{item.type}</p>
+                    <p className={`${colorType(mug.type)}`}>{mug.type}</p>
                   </div>
                 </div>
 
@@ -203,7 +214,8 @@ export const CardDetails = ({ mugFromHome }) => {
             <div
               className="btn-box"
               onClick={() => {
-                addItemInCart(item.id, amount);
+                addItemInCart(mug.id, amount);
+                if(renderInCart) deleteItemInCart(mug.id);
               }}
             >
               {renderInCart ? (
@@ -221,10 +233,22 @@ export const CardDetails = ({ mugFromHome }) => {
               <p>BUY NOW</p>
             </div>
             <div className="btn-box">
-              <div className="wrap" onClick={() => updateAmount(-1)}>
+              <div
+                className="wrap"
+                onClick={() => {
+                  updateAmount(-1);
+                  if (mugFromCart) updateAmountInRedux(mug.id, mug.amount, -1);
+                }}
+              >
                 <p>-</p>
               </div>
-              <div className="wrap" onClick={() => updateAmount(1)}>
+              <div
+                className="wrap"
+                onClick={() => {
+                  updateAmount(1);
+                  if (mugFromCart) updateAmountInRedux(mug.id, mug.amount, 1);
+                }}
+              >
                 <p>+</p>
               </div>
             </div>

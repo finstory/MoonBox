@@ -119,14 +119,18 @@ export const ListCart = () => {
   const SelectorItems = (idItem = 0) => {
     let listResult = [];
     listResult = listItemId.map((item, i) => {
-      setItemSelecedInRedux(item.id);
-      if (item.id === idItem) return { ...item, isSelected: true };
-      else if (idItem === 0 && listItemId.length - 1 === i)
+      if (item.id === idItem) {
         return { ...item, isSelected: true };
-      else return { ...item, isSelected: false };
+      } else if (idItem === 0 && listItemId.length - 1 === i) {
+        setItemSelecedInRedux(item.id);
+        return { ...item, isSelected: true };
+      } else {
+        return { ...item, isSelected: false };
+      }
     });
 
     setItemSelection(listResult);
+    idItem > 0 && setItemSelecedInRedux(idItem);
   };
 
   const styleSelector = (idItem) => {
@@ -148,7 +152,7 @@ export const ListCart = () => {
   if (itemSelection)
     return (
       <div className="slide-cart-box anim-showing">
-        {/* <button onClick={() => addItemInCart(1)}>Add</button> */}
+        {/* <button onClick={() => addItemInCart(32)}>Add</button> */}
         <div className="list-cart-container">
           {/* <div className="list-cart-mask"></div> */}
           <div className="list-cart">
