@@ -332,6 +332,7 @@
 }
 
 .card-details-box:nth-child(3) .btn-box:nth-child(1) p {
+    font-size: 1.6rem;
     line-height: 1rem;
     letter-spacing: 1px;
     margin: 1rem 0;
@@ -353,7 +354,7 @@
 }
 
 .card-details-box:nth-child(3) .btn-box:nth-child(2) p {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
     line-height: 1rem;
     letter-spacing: 1px;
     margin: 1rem 0;
@@ -461,9 +462,9 @@
     justify-content: center;
     align-items: center;
     letter-spacing: .1rem;
-    gap: .3rem;
+    gap: .7rem;
     width: 9rem;
-    height: 4rem;
+    height: 3.5rem;
     margin-bottom: 2rem;
     transition: background-color .5s;
     background-color: #3c2e4a85;
@@ -488,12 +489,12 @@
 
 .btn-back img {
     display: block;
-    height: 30%;
+    height: 29%;
 }
 
 .btn-back p {
-    margin-right: .8rem;
-    font-size: 2rem;
+    margin-right: .4rem;
+    font-size: 1.8rem;
 }
 
 .card-btn-favorites-detais {

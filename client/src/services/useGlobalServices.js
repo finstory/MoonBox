@@ -73,7 +73,7 @@ export const useGlobalServices = () => {
                     })
                     .catch((e) => console.log(e));
             }
-        setGlobal({ cart: { ...payload, totalPrice: calcTotalPrice(payload.listCart) } });
+        setGlobal({ cart: {...global.cart, ...payload, totalPrice: calcTotalPrice(payload.listCart) } });
 
     }
 
@@ -100,7 +100,7 @@ export const useGlobalServices = () => {
 
         axios(config)
             .then((response) => {
-                setGlobal({ cart: { totalPrice: calcTotalPrice(updatelistCart), listCart: updatelistCart, listItemId: updateItemId } });
+                setGlobal({ cart: {...global.cart, totalPrice: calcTotalPrice(updatelistCart), listCart: updatelistCart, listItemId: updateItemId } });
             })
             .catch((error) => {
                 console.log(error);
@@ -123,7 +123,7 @@ export const useGlobalServices = () => {
 
         axios(config)
             .then((response) => {
-                setGlobal({ cart: { totalPrice: calcTotalPrice(updateListCart), listCart: updateListCart, listItemId: updateItemId } });
+                setGlobal({ cart: {...global.cart, totalPrice: calcTotalPrice(updateListCart), listCart: updateListCart, listItemId: updateItemId } });
             })
             .catch((error) => { console.log(error) });
     }
@@ -154,7 +154,7 @@ export const useGlobalServices = () => {
                     })
                     .catch((e) => console.log(e));
 
-                setGlobal({ cart: { ...payload, totalPrice: calcTotalPrice(payload.listCart) } });
+                    setGlobal({ cart: {...global.cart, ...payload, totalPrice: calcTotalPrice(payload.listCart) } });
             })
             .catch((error) => {
                 console.log(error);

@@ -22,6 +22,7 @@ export const useGlobal = () => {
         cart: {
             id: null,
             listCart: [],
+            itemSelected : 0,
             totalPrice: 0,
         },
         favorites: {

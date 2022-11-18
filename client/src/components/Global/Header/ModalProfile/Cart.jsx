@@ -50,8 +50,11 @@ export const Cart = () => {
   };
 
   return (
-    <div className="slide-profile">
-      <div className="slide-cart-box anim-showing">
+    <div className="slide-profile"
+    >
+      <div className="slide-cart-box anim-showing"
+     
+      >
         <div className="list-cart-container">
           {/* <div className="list-cart-mask"></div> */}
           <div className="list-cart">
@@ -264,7 +267,7 @@ export const Cart = () => {
       </div>
       <div className="slide-cart-box anim-showing">
         <div className={`btn-total ${disabledProfile()}`}>
-          <p>TOTAL : {totalPrice}</p>
+          <p>TOTAL $ {totalPrice}</p>
         </div>
       </div>
       <div className="slide-cart-box anim-showing">

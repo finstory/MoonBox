@@ -33,7 +33,7 @@ export const Advertising = () => {
             <div className="publicidad">
               <div className="img"
               >
-                <img src="./img/publicidad-completa.png" />
+                {/* <img src="./img/publicidad-completa.png" /> */}
               </div>
             </div>
             <div className="play-wrap">

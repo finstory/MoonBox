@@ -12,7 +12,7 @@ import "./assets/styles/slideProfile.css";
 import "./assets/styles/mugsLimited.css";
 import "./assets/styles/details.css";
 import "./assets/styles/fullView.css";
-
+import "./assets/styles/cart.css";
 
 const App = () => {
 

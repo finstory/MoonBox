@@ -6,6 +6,7 @@ export const useDetalis = () => {
 
     const initialState = {
         item: {},
+        renderInCart : false,
     };
 
     function Details(state, action) {

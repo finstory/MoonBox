@@ -11,7 +11,7 @@ export const SelectorCarousel = () => {
   } = useHomeServices();
 
   const colorSelected = (num) => {
-    if (actualPage === num) return "#382e43cc";
+    if (actualPage === num) return "#554962d2";
     else return "#f2eff4b0";
   };
 

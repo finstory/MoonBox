@@ -4,6 +4,7 @@ import { Auth } from "../components/Auth/Auth";
 import { Footer } from "../components/Global/Footer/Footer";
 import { MugsToBuy } from "../components/Global/Header/Game/MugsToBuy";
 import { Header } from "../components/Global/Header/Header";
+import { Cart } from "../pages/Cart";
 import { Details } from "../pages/Details";
 import { FullView } from "../pages/FullView";
 import { Home } from "../pages/Home";
@@ -31,6 +32,7 @@ export const AppRouter = () => {
           <Route path="/:id" element={<Home />} />
           <Route path="/view_full/:page" element={<FullView />} />
           <Route path="/details/:id" element={<Details  />} />
+          <Route path="/cart" element={<Cart  />} />
         </Routes>
       </main>
       <Footer />

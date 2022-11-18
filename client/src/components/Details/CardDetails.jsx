@@ -6,7 +6,7 @@ import { useGlobalServices } from "../../services/useGlobalServices";
 export const CardDetails = ({ mugFromHome }) => {
   const {
     getItemById,
-    details: { item },
+    details: { item, renderInCart },
   } = useDetailsServices();
   const {
     addItemInFavorites,
@@ -56,7 +56,7 @@ export const CardDetails = ({ mugFromHome }) => {
     getItemById();
     setTimeout(() => {
       setMugTemp(true);
-    },1100);
+    }, 1100);
   }, []);
 
   useEffect(() => {
@@ -88,9 +88,11 @@ export const CardDetails = ({ mugFromHome }) => {
               />
             </div>
 
-            <div className="close" onClick={goHome}>
-              <p>-</p>
-            </div>
+            {!renderInCart && (
+              <div className="close" onClick={goHome}>
+                <p>-</p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -204,11 +206,19 @@ export const CardDetails = ({ mugFromHome }) => {
                 addItemInCart(item.id, amount);
               }}
             >
-              <p>Add</p>
-              <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/w_60/v1668449509/shop-mugs/navSvgs/cart-svg_adtx9k.png" />
+              {renderInCart ? (
+                <>
+                  <p>REMOVE</p>
+                </>
+              ) : (
+                <>
+                  <p>ADD</p>
+                  <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/w_60/v1668449509/shop-mugs/navSvgs/cart-svg_adtx9k.png" />
+                </>
+              )}
             </div>
             <div className="btn-box">
-              <p>Buy Now</p>
+              <p>BUY NOW</p>
             </div>
             <div className="btn-box">
               <div className="wrap" onClick={() => updateAmount(-1)}>

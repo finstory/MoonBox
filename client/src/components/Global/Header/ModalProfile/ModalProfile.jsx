@@ -32,7 +32,6 @@ export const ModalProfile = () => {
 
   useEffect(() => {
     switchWindows("active", active, 100, 100);
-    console.log(active);
   }, [active]);
 
   if (listWindows.active)

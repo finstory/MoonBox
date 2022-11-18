@@ -312,7 +312,8 @@
     margin: 0 .5rem;
     height: 1.5rem;
     width: 1.5rem;
-    background-color: #f2eff4b0;
+    background-color: #f2eff492;
+    /* background-color: #554962d2; */
     border-radius: 2rem;
     cursor: pointer;
     box-shadow: 0px 1px 6px #0e0d0fd5;
