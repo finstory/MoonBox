@@ -18,10 +18,14 @@ export const useNav = () => {
     navigate(`/home/${id}`);
   }
 
+  const goCart = () => {
+    navigate(`/cart`);
+  }
+
   const goBack = () => {
     navigate(-1);
   }
 
 
-  return ({ goHome, goBack, goDetails, redirectPage })
+  return ({ goHome,goCart, goBack, goDetails, redirectPage })
 }

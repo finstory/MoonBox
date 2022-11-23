@@ -99,7 +99,7 @@ export const CardMain = ({
               className={`${colorType(type)}`}
               // style={{ backgroundColor: colorType(type) }}
             >
-              {type}
+              {type.toUpperCase()}
             </p>
             <p>$ {price} us</p>
           </div>

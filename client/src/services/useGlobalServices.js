@@ -45,6 +45,61 @@ export const useGlobalServices = () => {
             })
     }
 
+
+
+    //* Manager Orders.
+
+    const swtichModalOrder = (cond) => {
+        const { orders } = global;
+        setGlobal({ orders: { ...orders, isActive: cond } })
+    }
+
+    const getOrdersByUser = async () => {
+        const { user: { userId } } = login;
+        let listOrders = [];
+        await axios(`http://localhost:3001/orders?id_user=${userId}`)
+            .then((resp) => {
+                const data = resp.data;
+                listOrders = data;
+            })
+            .catch((e) => console.log("yours orders is not available or has nothing"));
+
+        listOrders = listOrders.map(order => {
+            const listGetItems = [];
+            let totalPrice = 0;
+            order.list_cart.forEach(async item => {
+                const itemResult = {
+                    id: item.id,
+                    amount: item.amount,
+                    price: 0,
+                    image: "",
+                    name: ""
+                };
+                await axios(`http://localhost:3001/mugs?id=${item.id}`)
+                    .then((resp) => {
+                        const data = resp.data[0];
+                        totalPrice = + data.price * item.amount;
+                        itemResult.price = data.price * item.amount;
+                        itemResult.image = data.full_image;
+                        itemResult.name = data.name + ", " + data.sub_name;
+                        listGetItems.push(itemResult);
+                    })
+                    .catch((e) => console.log(e));
+
+            });
+
+            return {
+                ...order,
+                list_cart: listGetItems,
+            }
+        });
+
+        setGlobal({ listOrders });
+
+    }
+
+    //$ Manager Orders.
+
     //* Manager Cart.
 
     // setGlobal({ cart: { listCart: resp.data[0] ,totalPrice: resp.data[0].price} });
@@ -78,7 +133,7 @@ export const useGlobalServices = () => {
     }
 
     const editAmountItemInCart = async (idItem, amount) => {
-        const { cart: { id = 1, listItemId, listCart } } = global;
+        const { cart: { id = 1, listItemId, listCart, itemSelected } } = global;
 
         const updateItemId = listItemId.map(item => {
             if (item.id === idItem) return { ...item, amount };
@@ -100,7 +155,7 @@ export const useGlobalServices = () => {
 
         axios(config)
             .then((response) => {
-                setGlobal({ cart: { ...global.cart, totalPrice: calcTotalPrice(updatelistCart), listCart: updatelistCart, listItemId: updateItemId } });
+                setGlobal({ cart: { ...global.cart, itemSelected: idItem, totalPrice: calcTotalPrice(updatelistCart), listCart: updatelistCart, listItemId: updateItemId } });
             })
             .catch((error) => {
                 console.log(error);
@@ -276,5 +331,10 @@ export const useGlobalServices = () => {
 
     //$ Manager Game.
 
-    return { getAllMugsLimited, getAllCategories, switchModalProfile, getCart, editAmountItemInCart, deleteItemInCart, addItemInCart, searchItemLimited, getFavorites, deleteItemInFavorites, addItemInFavorites, itemExistsInFavorites, global, home };
+    const switchScrollManager = (cond) => {
+        setGlobal({ scrollManager: { ...global.scrollManager, goDetails: cond } });
+    }
+
+
+    return { swtichModalOrder, getOrdersByUser, getAllMugsLimited, getAllCategories, switchModalProfile, getCart, editAmountItemInCart, deleteItemInCart, addItemInCart, searchItemLimited, getFavorites, deleteItemInFavorites, addItemInFavorites, itemExistsInFavorites, switchScrollManager, global, home };
 }

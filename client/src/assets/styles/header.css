@@ -190,6 +190,7 @@ body {
     color: #EEE4FC;
     /* margin:0 1rem ; */
     cursor: pointer;
+    text-decoration: none;
 }
 
 .menu-box p,

@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { BtnCart } from "../components/Cart/BtnCart";
 import { ListCart } from "../components/Cart/ListCart";
 import { CardDetails } from "../components/Details/CardDetails";
 import { useDetailsContext } from "../context/useDetalis";
 import { useNav } from "../hooks/useNav";
 import { useGlobalServices } from "../services/useGlobalServices";
-
+import { AnimationOnScroll } from "react-animation-on-scroll";
 export const Cart = () => {
   const { goHome } = useNav();
+  const refCart = useRef();
   const { details, setDetails } = useDetailsContext();
   const {
     editAmountItemInCart,
@@ -16,9 +17,12 @@ export const Cart = () => {
       cart: { listCart, itemSelected },
     },
   } = useGlobalServices();
+  // window.scrollTo(0, offsetHeight);
 
   useEffect(() => {
+
     setDetails({ renderInCart: true });
+
     return () => {
       setDetails({ renderInCart: false });
     };
@@ -26,7 +30,7 @@ export const Cart = () => {
 
   if (listCart)
     return (
-      <div className="details-container">
+      <div className="details-container" ref={refCart}>
         <div className="cart-container">
           <CardDetails
             mugFromCart={listCart.find((item) => item.id === itemSelected)}

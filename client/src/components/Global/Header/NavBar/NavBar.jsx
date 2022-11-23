@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { img } from "../../../../assets/images";
 import { useLoginContext } from "../../../../context/useLogin";
 import { useManagerWindows } from "../../../../hooks/useManagerWindows";
@@ -21,19 +22,19 @@ export const NavBar = () => {
         <div className="menu-box">
           <img src={img.logo} alt="logo moonbox" />
         </div>
-        <div className="menu-box">
+        <Link to="./" className="menu-box">
           <div className="img-box">
             <img src={img.home} />
             <img src={listImgActive.home} />
           </div>
           <p>HOME</p>
-        </div>
+        </Link>
         <div className="menu-box">
           <div className="img-box">
             <img src={img.star} />
             <img src={listImgActive.star} />
           </div>
-          <p>TOP MUGS</p>
+          <p>DAY OFFER</p>
         </div>
         <div className="menu-box">
           <div className="img-box">

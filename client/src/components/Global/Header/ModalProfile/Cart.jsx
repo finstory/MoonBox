@@ -1,18 +1,23 @@
 import React, { useEffect } from "react";
+import { useImageTools } from "../../../../hooks/useImageTools";
+import { useNav } from "../../../../hooks/useNav";
 import { useGlobalServices } from "../../../../services/useGlobalServices";
 import { useLoginServices } from "../../../../services/useLoginServices";
 
 export const Cart = () => {
   const { logout } = useLoginServices();
-
+  const { goCart } = useNav();
   const {
     getAllCartByUserId,
     editAmountItemInCart,
     deleteItemInCart,
+    switchScrollManager,
     global: {
       cart: { listCart, totalPrice },
     },
   } = useGlobalServices();
+
+  const { reSizeImage } = useImageTools();
 
   const colorType = (type) => {
     switch (type) {
@@ -38,23 +43,9 @@ export const Cart = () => {
     editAmountItemInCart(idItem, itemAmount + value);
   };
 
-  const reSizeImage = (url, weigth) => {
-    let newUrl = "";
-    const list = url.split("/upload/");
-
-    for (let i = 0; i < list.length; i++)
-      if (i === 0) newUrl = list[i] + `/upload/w_${weigth},f_auto/`;
-      else newUrl += list[i];
-
-    return newUrl;
-  };
-
   return (
-    <div className="slide-profile"
-    >
-      <div className="slide-cart-box anim-showing"
-     
-      >
+    <div className="slide-profile">
+      <div className="slide-cart-box anim-showing">
         <div className="list-cart-container">
           {/* <div className="list-cart-mask"></div> */}
           <div className="list-cart">
@@ -271,7 +262,13 @@ export const Cart = () => {
         </div>
       </div>
       <div className="slide-cart-box anim-showing">
-        <div className={`btn-view-all ${disabledProfile()}`}>
+        <div
+          className={`btn-view-all ${disabledProfile()}`}
+          onClick={() => {
+            goCart();
+            switchScrollManager(true);
+          }}
+        >
           <div className="img-wrap">
             <img
               src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1667127016/shop-mugs/navSvgs/Eye_open_font_awesome.svg_vwzxuj.png"

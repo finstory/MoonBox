@@ -37,7 +37,7 @@ export const ListCart = () => {
 
   const updateAmount = (idItem, itemAmount, value) => {
     if (value === -1 && itemAmount <= 1) return;
-    if (value === 1 && itemAmount >= 10) return;
+    if (value === 1 && itemAmount >= 9) return;
     editAmountItemInCart(idItem, itemAmount + value);
   };
 
@@ -140,10 +140,10 @@ export const ListCart = () => {
     if (itemFilter.length) return true;
     else return false;
   };
-
+  const listItemIdLength = listItemId ? listItemId.length : 0;
   useEffect(() => {
     listItemId && SelectorItems();
-  }, [JSON.stringify(listItemId && listItemId.length)]);
+  }, [JSON.stringify(listItemIdLength)]);
 
   useEffect(() => {
     renderCardEmpty();

@@ -4,7 +4,7 @@ import { useLoginServices } from "../../../../services/useLoginServices";
 
 export const Profile = () => {
   const { logout } = useLoginServices();
-  const { switchModalProfile } = useGlobalServices();
+  const { switchModalProfile, swtichModalOrder } = useGlobalServices();
   return (
     <div className="slide-profile">
       <div className="slide-profile-box anim-showing">
@@ -22,7 +22,7 @@ export const Profile = () => {
         <p>FACU995ELECTRO@HOTMAIL.COM</p>
       </div>
       <div className="slide-profile-box anim-showing">
-        <div className="btn-orders">
+        <div className="btn-orders" onClick={() => swtichModalOrder(true)}>
           <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1666883847/shop-mugs/navSvgs/order_ubyw3c.png" />
           <p>ORDERS</p>
         </div>

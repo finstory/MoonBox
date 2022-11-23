@@ -6,7 +6,10 @@ export const useGlobal = () => {
 
     const initialState = {
 
+        listOrders: [],
+
         listCategories: [],
+
         advertising: {
             activeGame: false,
         },
@@ -18,11 +21,14 @@ export const useGlobal = () => {
             active: false,
             mode: "profile",
         },
-
+        orders: {
+            isActive: false,
+            listOrders: [],
+        },
         cart: {
             id: null,
             listCart: [],
-            itemSelected : 0,
+            itemSelected: 0,
             totalPrice: 0,
         },
         favorites: {
@@ -41,6 +47,10 @@ export const useGlobal = () => {
             isLoading: false,
             loadingProgress: 0,
             listGifs: [],
+        },
+
+        scrollManager: {
+            goDetails: false,
         },
 
         inputValue: {

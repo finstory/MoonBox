@@ -4,6 +4,7 @@ import { Auth } from "../components/Auth/Auth";
 import { Footer } from "../components/Global/Footer/Footer";
 import { MugsToBuy } from "../components/Global/Header/Game/MugsToBuy";
 import { Header } from "../components/Global/Header/Header";
+import { Orders } from "../components/Global/Orders/Orders";
 import { Cart } from "../pages/Cart";
 import { Details } from "../pages/Details";
 import { FullView } from "../pages/FullView";
@@ -23,6 +24,7 @@ export const AppRouter = () => {
   return (
     <>
       <MugsToBuy />
+      <Orders />
       <Auth />
       <Header />
       <main className="main-index"
