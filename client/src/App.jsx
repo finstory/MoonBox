@@ -14,6 +14,7 @@ import "./assets/styles/details.css";
 import "./assets/styles/fullView.css";
 import "./assets/styles/cart.css";
 import "./assets/styles/orders.css";
+import "./assets/styles/ofertToday.css";
 
 const App = () => {
 

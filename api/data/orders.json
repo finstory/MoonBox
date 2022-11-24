@@ -2,8 +2,20 @@
   {
     "id": 1,
     "id_user": 1,
-    "id_cart": 1,
+    "list_cart": [{ "id": 32, "amount": 2 },
+    { "id": 31, "amount": 4 }],
     "status": "process",
-    "address": "Argentina, Buenos Aires, Mendonza, Gualmayen, Caña 920"
+    "address": "Argentina, Mendonza, Gualmayen, Caña 920",
+    "total_price": 23,
+    "code":"20WE"
+  },
+  {
+    "id": 2,
+    "id_user": 1,
+    "list_cart": [{ "id": 34, "amount": 3 }],
+    "status": "success",
+    "address": "Argentina, Buenos Aires, Caballito, Uruguay 420",
+    "total_price": 13,
+    "code":"4WX8"
   }
 ]

@@ -17,6 +17,7 @@ export const useHome = () => {
             search: ""
         }
         , activeFullView: false,
+        activeTodayOffer: false,
     };
 
     function Home(state, action) {

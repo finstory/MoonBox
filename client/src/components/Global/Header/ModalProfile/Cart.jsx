@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useImageTools } from "../../../../hooks/useImageTools";
 import { useNav } from "../../../../hooks/useNav";
 import { useGlobalServices } from "../../../../services/useGlobalServices";
@@ -6,7 +6,7 @@ import { useLoginServices } from "../../../../services/useLoginServices";
 
 export const Cart = () => {
   const { logout } = useLoginServices();
-  const { goCart } = useNav();
+  const { goCart, goDetails } = useNav();
   const {
     getAllCartByUserId,
     editAmountItemInCart,
@@ -16,8 +16,8 @@ export const Cart = () => {
       cart: { listCart, totalPrice },
     },
   } = useGlobalServices();
-
   const { reSizeImage } = useImageTools();
+  const [isTriggerCard, SetIsTriggerCard] = useState(true);
 
   const colorType = (type) => {
     switch (type) {
@@ -51,7 +51,19 @@ export const Cart = () => {
           <div className="list-cart">
             {listCart && listCart.length > 0 ? (
               listCart.map((item) => (
-                <div key={item.id} className="product-box">
+                <div
+                  key={item.id}
+                  className="product-box"
+                  onPointerDownCapture={() => {
+                    SetIsTriggerCard(false);
+                  }}
+                  onClick={() => {
+                    if (!isTriggerCard) {
+                      goDetails(item.id);
+                      switchScrollManager(true, "details");
+                    }
+                  }}
+                >
                   <div className="left-wrap">
                     <div className="img-wrap">
                       <div className={`type ${colorType(item.type)}`}>
@@ -72,7 +84,12 @@ export const Cart = () => {
                     </div>
                     <div className="box">
                       <p>X {item.amount}</p>
-                      <div className="panel">
+                      <div
+                        className="panel"
+                        onPointerDown={() => {
+                          SetIsTriggerCard(true);
+                        }}
+                      >
                         <div
                           className="btn-panel"
                           onClick={() => updateAmount(item.id, item.amount, -1)}
@@ -266,7 +283,7 @@ export const Cart = () => {
           className={`btn-view-all ${disabledProfile()}`}
           onClick={() => {
             goCart();
-            switchScrollManager(true);
+            switchScrollManager(true, "details");
           }}
         >
           <div className="img-wrap">

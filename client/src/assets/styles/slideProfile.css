@@ -235,8 +235,14 @@
 
     /* margin-top: 1.3rem; */
     border-radius: 1rem;
-    background-color: #1e192586;
+    background-color: #1e19254f;
+    transition: background-color .2s;
     cursor: pointer;
+}
+
+.list-cart .product-box:hover {
+    background-color: #b0a9ba40;
+    transition: background-color .5s;
 }
 
 .list-cart .product-box .left-wrap {

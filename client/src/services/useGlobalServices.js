@@ -331,8 +331,11 @@ export const useGlobalServices = () => {
 
     //$ Manager Game.
 
-    const switchScrollManager = (cond) => {
-        setGlobal({ scrollManager: { ...global.scrollManager, goDetails: cond } });
+    const switchScrollManager = (cond, type) => {
+        if (type === "details") setGlobal({ scrollManager: { ...global.scrollManager, goDetails: cond } });
+
+        if (type === "offer") setGlobal({ scrollManager: { ...global.scrollManager, goOffer: cond } });
+
     }
 
 

@@ -51,6 +51,7 @@ export const useGlobal = () => {
 
         scrollManager: {
             goDetails: false,
+            goOffer: false,
         },
 
         inputValue: {

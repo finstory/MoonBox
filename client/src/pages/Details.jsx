@@ -1,5 +1,6 @@
 import React from "react";
 import { CardDetails } from "../components/Details/CardDetails";
+import { ImageFullSize } from "../components/Details/ImageFullSize";
 import { useNav } from "../hooks/useNav";
 import { useDetailsServices } from "../services/useDetailsServices";
 import { useGlobalServices } from "../services/useGlobalServices";
@@ -18,6 +19,7 @@ export const Details = () => {
   if (item && listItemId)
     return (
       <div className="details-container">
+              <ImageFullSize />
         <CardDetails />
         <div className="btn-back" onClick={goHome}>
           <div className="img-wrap">
@@ -26,7 +28,7 @@ export const Details = () => {
               alt="icon back"
             />
           </div>
-          <p>Back</p>
+          <p>BACK</p>
         </div>
       </div>
     );

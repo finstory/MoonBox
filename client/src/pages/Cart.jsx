@@ -6,6 +6,7 @@ import { useDetailsContext } from "../context/useDetalis";
 import { useNav } from "../hooks/useNav";
 import { useGlobalServices } from "../services/useGlobalServices";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { ImageFullSize } from "../components/Details/ImageFullSize";
 export const Cart = () => {
   const { goHome } = useNav();
   const refCart = useRef();
@@ -31,6 +32,7 @@ export const Cart = () => {
   if (listCart)
     return (
       <div className="details-container" ref={refCart}>
+        <ImageFullSize />
         <div className="cart-container">
           <CardDetails
             mugFromCart={listCart.find((item) => item.id === itemSelected)}
@@ -52,7 +54,7 @@ export const Cart = () => {
               alt="icon back"
             />
           </div>
-          <p>Back</p>
+          <p>BACK</p>
         </div>
       </div>
     );

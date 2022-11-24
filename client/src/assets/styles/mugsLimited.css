@@ -153,14 +153,14 @@
     width: 1.6rem;
     padding: 1rem;
     cursor: pointer;
-    background-color: #212022d5;
-    filter: drop-shadow(0px 0px 5px #ae9d91dd);
+    background-color: #212022b1;
+    filter: drop-shadow(0px 0px 5px #ae9d9141);
     transition:  .4s;
 }
 
 .mugs-limited .index-box:nth-child(3) .text-box:hover {
 
     text-shadow: 0px 0px 5px #d9d7db;
-    filter: drop-shadow(0px 0px 5px #d5b19bdd);
+    filter: drop-shadow(0px 0px 5px #d5b19b7c);
     transition: .4s;
 }

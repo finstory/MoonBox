@@ -28,7 +28,7 @@ export const ListOrders = () => {
   }, [listOrders]);
 
   useEffect(() => {
-    return () => switchScrollManager(false);
+    return () => switchScrollManager(false,"details");
   }, []);
 
   return (
@@ -88,7 +88,7 @@ export const ListOrders = () => {
                           onClick={() => {
                             goDetails(item.id);
                             swtichModalOrder(false);
-                            switchScrollManager(true);
+                            switchScrollManager(true,"details");
                           }}
                         >
                           <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1667127016/shop-mugs/navSvgs/Eye_open_font_awesome.svg_vwzxuj.png" />

@@ -71,7 +71,10 @@ export const useHomeServices = () => {
         setHome({ activeFullView: cond });
     }
 
-
+    const switchTodayOffer = (cond) => {
+        // const {activeFullView} = home;
+        setHome({ activeTodayOffer: cond });
+    }
 
     const resetDB = async () => {
         const pass = prompt('Password Admin :');
@@ -87,5 +90,5 @@ export const useHomeServices = () => {
     };
 
 
-    return { goPageHome, switchFullView, resetFilters, idParam, global, home };
+    return { goPageHome,switchTodayOffer, switchFullView, resetFilters, idParam, global, home };
 }

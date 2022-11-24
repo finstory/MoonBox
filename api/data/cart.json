@@ -2,6 +2,11 @@
   {
     "id": 1,
     "id_user": 1,
-    "items": [{"id":1,"amount":1}, {"id":2,"amount":5}, {"id":3,"amount":7}]
+    "items": [{"id":32,"amount":1},{"id":33,"amount":1},{"id":2,"amount":1},{"id":1,"amount":1}]
+  },
+  {
+    "id": 2,
+    "id_user": 1,
+    "items": [{"id":34,"amount":1},{"id":35,"amount":1}]
   }
 ]

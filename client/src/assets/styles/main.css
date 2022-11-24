@@ -225,7 +225,6 @@
     }
 
     24% {
-        transform: scale(1, 1);
         background-color: #70627b;
     }
 }
@@ -244,7 +243,6 @@
     }
 
     24% {
-        transform: scale(1, 1);
         background-color: #677d69;
     }
 }

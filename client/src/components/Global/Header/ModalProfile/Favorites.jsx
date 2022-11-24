@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
+import { useNav } from "../../../../hooks/useNav";
 import { useGlobalServices } from "../../../../services/useGlobalServices";
 import { useLoginServices } from "../../../../services/useLoginServices";
 
 export const Favorites = () => {
   const { logout } = useLoginServices();
-
+  const { goDetails } = useNav();
   const {
+    switchScrollManager,
     editAmountItemInCart,
     deleteItemInFavorites,
     addItemInFavorites,
@@ -64,7 +66,14 @@ export const Favorites = () => {
           >
             {listFavorites && listFavorites.length > 0 ? (
               listFavorites.map((item) => (
-                <div key={item.id} className="product-box">
+                <div
+                  key={item.id}
+                  className="product-box"
+                  onClick={() => {
+                    goDetails(item.id);
+                    switchScrollManager(true,"details");
+                  }}
+                >
                   <div className="left-wrap">
                     <div className="img-wrap">
                       <div className={`type ${colorType(item.type)}`}>

@@ -12,9 +12,18 @@ export const useDetailsServices = () => {
         axios(`http://localhost:3001/mugs/${idParam}`)
             .then((resp) => {
                 const item = resp.data;
-                setDetails({item});
+                setDetails({ item });
             })
             .catch((e) => console.log(e));
     }
-    return { getItemById, idParam, details };
+
+    const setUrlToViewFullSize = (url) => {
+        setDetails({ imageFullSize: { ...details.imageFullSize, url } });
+    }
+
+    const activeViewFullSize = (cond) => {
+        setDetails({ imageFullSize: { ...details.imageFullSize, active: cond } });
+    }
+
+    return { setUrlToViewFullSize, activeViewFullSize, getItemById, idParam, details };
 }

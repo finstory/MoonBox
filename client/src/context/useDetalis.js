@@ -6,7 +6,11 @@ export const useDetalis = () => {
 
     const initialState = {
         item: {},
-        renderInCart : false,
+        renderInCart: false,
+        imageFullSize: {
+            active: false,
+            url: ""
+        }
     };
 
     function Details(state, action) {

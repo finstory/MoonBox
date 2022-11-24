@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useImageTools } from "../../../../hooks/useImageTools";
 import { useManagerText } from "../../../../hooks/useManagerText";
 import { useNav } from "../../../../hooks/useNav";
 import { useGlobalServices } from "../../../../services/useGlobalServices";
@@ -21,7 +22,7 @@ export const CardMain = ({
     },
   } = useGlobalServices();
   const { goDetails } = useNav();
-
+  const { reSizeImage } = useImageTools();
   const { limitString } = useManagerText();
   sub_name = limitString(sub_name, 20);
   name = limitString(name, 17);
@@ -85,7 +86,7 @@ export const CardMain = ({
         <div
           className="card-img"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${reSizeImage(image,300)})`,
             opacity: 0.9,
           }}
         ></div>
